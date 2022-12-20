@@ -1,0 +1,29 @@
+.navigation {
+  background-color: darkgreen;
+  height: 2.8vw;
+  text-align: center;
+}
+li {
+  padding: 5px 12px 0px 12px;
+  display: inline-block;
+  color: white;
+  font-size: 1.6vw;
+  font-family: tahoma;
+}
+.page {
+  text-align: center;
+}
+h1 {
+  font-size: 5vw;
+  color: black;
+  text-shadow: 2px 2px darkgreen;
+  font-family: tahoma;
+  font-weight: bolder;
+}
+h2 {
+  font-size: 3vw;
+  color: darkgreen;
+  text-shadow: 2px 2px black;
+  font-family: arial;
+  font-style: italic;
+}

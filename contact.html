@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Younglings | Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="contact.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body>
+
+  <div class="navigation">
+    <ul>
+      <a href="index.html"><li>Home</li></a>
+      <a href="about.html"><li>About</li></a>
+      <a href="contact.html"><li>Contact</li></a>
+    </ul>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <form action="/done.html" method="post" onsubmit="return submitUserForm();">
+    <label for="email">Name:</label><br>
+    <input type="text" name="name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" required><br>
+    <label for="email">Message:</label><br>
+    <input type="text" name="message" required>
+    <br>
+    <div class="g-recaptcha" data-sitekey="6LfNDJUjAAAAAGPg1EQ0WemHQALYjK26VGljpUQR" data-callback="verifyCaptcha"></div>
+    <br>
+    <div id="g-recaptcha-error"></div>
+    <input type="submit" name="submit" value="Submit" />
+    <br>
+  </form>
+
+  <script>
+  function submitUserForm() {
+      var response = grecaptcha.getResponse();
+      if(response.length == 0) {
+          document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+          return false;
+      }
+      return true;
+  }
+
+  function verifyCaptcha() {
+      document.getElementById('g-recaptcha-error').innerHTML = '';
+  }
+  </script>
+
+
+
+</body>
+</html>
